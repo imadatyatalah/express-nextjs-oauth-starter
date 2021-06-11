@@ -1,0 +1,24 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  githubAvatarUrl String? @map("github_avatar_url")
+  githubName      String  @map("github_name")
+
+  githubEmail    String? @unique @map("github_email")
+  githubUsername String  @unique @map("github_username")
+  githubId       Int     @unique @map("github_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
