@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "github-oauth-client",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "next": "10.2.3",
+    "nookies": "^2.5.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   }
