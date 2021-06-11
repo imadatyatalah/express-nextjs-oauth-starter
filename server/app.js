@@ -8,6 +8,7 @@ const passport = require("passport");
 
 require("./config/passport");
 
+const usersRouter = require("./routes/users");
 const currentUserRouter = require("./routes/me");
 const githubOAuth = require("./routes/auth/github");
 
@@ -27,6 +28,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use("/users", usersRouter);
 app.use("/me", currentUserRouter);
 app.use("/auth/github", githubOAuth);
 
