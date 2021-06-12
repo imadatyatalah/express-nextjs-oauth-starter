@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "prisma:studio": "yarn prisma studio",
+    "prisma:migrate:dev": "yarn prisma migrate dev",
+    "prisma:migrate:reset": "yarn prisma migrate reset",
+    "prisma:db:push": "yarn prisma db push",
+    "prisma:db:seed": "yarn prisma db seed --preview-feature"
   },
   "dependencies": {
     "@prisma/client": "^2.24.1",
