@@ -15,9 +15,12 @@ router.get(
       expiresIn: 60 * 60 * 24 * 1000,
     });
 
-    res.cookie("jwtToken", token);
+    res.cookie("gh_token", token, {
+      httpOnly: true,
+      secure: true,
+    });
 
-    req.logIn(req.user, function (err) {
+    req.logIn(req.user, (err) => {
       if (err) return next(err);
       res.redirect(`http://localhost:3000`);
     });
@@ -26,7 +29,7 @@ router.get(
 
 router.get("/logout", (req, res) => {
   req.session = null;
-  res.clearCookie("jwtToken");
+  res.clearCookie("gh_token");
   req.logout();
   res.redirect("http://localhost:3000");
 });

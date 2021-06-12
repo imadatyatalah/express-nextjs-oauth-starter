@@ -45,9 +45,9 @@ async function getUser(token) {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const { jwtToken } = parseCookies(ctx);
+  const { gh_token } = parseCookies(ctx);
 
-  const data = await getUser(jwtToken || "");
+  const data = await getUser(gh_token || "");
 
   return { props: { data } };
 };
