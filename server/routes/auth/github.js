@@ -16,7 +16,6 @@ router.get(
     });
 
     res.cookie("gh_token", token, {
-      httpOnly: true,
       secure: true,
     });
 
