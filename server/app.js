@@ -5,6 +5,7 @@ const path = require("path");
 // const cookieSession = require("cookie-session");
 const logger = require("morgan");
 const passport = require("passport");
+const cors = require("cors");
 
 require("./config/passport");
 
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 // app.use(
 //   cookieSession({
 //     name: "github-auth-session",
