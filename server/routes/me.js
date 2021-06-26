@@ -12,7 +12,7 @@ router.use((req, res, next) => {
 
   jwt.verify(token, JWT_KEY, function (err, data) {
     if (err) {
-      res.status(401).send({ error: "Unauthorized" });
+      res.status(401).send({ error: true, message: "Unauthorized" });
     } else {
       req.user = data;
       next();
