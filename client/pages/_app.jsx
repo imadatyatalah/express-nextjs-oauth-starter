@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 import { useUser } from "../hooks/useUser";
+
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }) => {
