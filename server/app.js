@@ -10,6 +10,7 @@ require("./config/passport");
 const usersRouter = require("./routes/users");
 const currentUserRouter = require("./routes/me");
 const githubOAuth = require("./routes/auth/github");
+const user = require("./routes/user");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(passport.session());
 app.use("/users", usersRouter);
 app.use("/me", currentUserRouter);
 app.use("/auth/github", githubOAuth);
+app.use("/user", user);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
