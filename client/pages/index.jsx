@@ -1,32 +1,38 @@
-import useUser from "../hooks/useUser";
+import { useUser } from "../hooks/useUser";
 
 const Home = () => {
-  const { user } = useUser();
+  const user = useUser((state) => state.user);
 
   return (
     <>
       <main>
-        <h1>Welcome to Nextjs OAuth with GitHub</h1>
+        <section>
+          <h1>Welcome to Nextjs OAuth with GitHub</h1>
 
-        <div>
-          {user?.error ? (
-            <p>
-              <a href={"http://localhost:1337/auth/github"}>
-                Click here to login
-              </a>
-            </p>
-          ) : (
-            <p>
-              <a href={"http://localhost:1337/auth/github/logout"}>
-                Click here to logout
-              </a>
-            </p>
-          )}
-        </div>
+          <div>
+            {user && (
+              <code>
+                <pre>{JSON.stringify(user, null, 2)}</pre>
+              </code>
+            )}
+          </div>
 
-        <code>
-          <pre>{JSON.stringify(user, null, 2)}</pre>
-        </code>
+          <div>
+            {user?.error ? (
+              <p>
+                <a href={"http://localhost:1337/auth/github"}>
+                  Click here to login
+                </a>
+              </p>
+            ) : (
+              <p>
+                <a href={"http://localhost:1337/auth/github/logout"}>
+                  Click here to logout
+                </a>
+              </p>
+            )}
+          </div>
+        </section>
       </main>
     </>
   );
