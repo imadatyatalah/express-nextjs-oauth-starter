@@ -1,4 +1,4 @@
-import { useUser } from "../hooks/useUser";
+import { useUser } from "../stores/useUser";
 
 const Home = () => {
   const user = useUser((state) => state.user);

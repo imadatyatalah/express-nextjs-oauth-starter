@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useUser } from "../hooks/useUser";
+import { useUser } from "../stores/useUser";
 
 import "../styles/globals.css";
 
