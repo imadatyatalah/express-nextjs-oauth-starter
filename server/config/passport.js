@@ -1,10 +1,8 @@
-const passport = require("passport");
-const GitHubStrategy = require("passport-github2").Strategy;
-const PrismaClient = require("@prisma/client").PrismaClient;
+import { Strategy as GitHubStrategy } from "passport-github2";
+import passport from "passport";
 
-const { github_client_id, github_client_secret } = require("./credentials");
-
-const prisma = new PrismaClient();
+import { github_client_id, github_client_secret } from "./credentials.js";
+import { prisma } from "./prisma.js";
 
 passport.serializeUser((user, done) => {
   done(null, user._json.id);

@@ -4,11 +4,11 @@
  * Module dependencies.
  */
 
-var app = require("../app");
-var debug = require("debug")("github-oauth:server");
-var http = require("http");
+import debug from "debug";
+import http from "http";
 
-const { server_port } = require("../config/credentials");
+import app from "../app.js";
+import { server_port } from "../config/credentials.js";
 
 /**
  * Get port from environment and store in Express.

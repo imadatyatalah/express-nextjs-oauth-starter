@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 const JWT_KEY = "something_private_and_long_enough_to_secure";
 
@@ -15,4 +15,4 @@ const isLoggedIn = (req, res, next) => {
   });
 };
 
-module.exports = isLoggedIn;
+export default isLoggedIn;

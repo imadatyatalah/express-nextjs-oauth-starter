@@ -1,12 +1,13 @@
-const express = require("express");
-const routes = express.Router();
+import express from "express";
 
-const currentUserRouter = require("./routes/me");
-const githubOAuth = require("./routes/auth/github");
-const user = require("./routes/user");
+import currentUserRouter from "./routes/me.js";
+import githubOAuth from "./routes/auth/github.js";
+import user from "./routes/user/index.js";
+
+const routes = express.Router();
 
 routes.use("/me", currentUserRouter);
 routes.use("/auth/github", githubOAuth);
 routes.use("/user", user);
 
-module.exports = routes;
+export default routes;

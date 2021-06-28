@@ -1,8 +1,8 @@
-const express = require("express");
-const jwt = require("jsonwebtoken");
-const PrismaClient = require("@prisma/client").PrismaClient;
+import express from "express";
+import jwt from "jsonwebtoken";
 
-const prisma = new PrismaClient();
+import { prisma } from "../config/prisma.js";
+
 const JWT_KEY = "something_private_and_long_enough_to_secure";
 
 const router = express();
@@ -21,11 +21,15 @@ router.use((req, res, next) => {
 });
 
 router.get("/", async (req, res) => {
-  user = await prisma.user.findUnique({
-    where: { githubId: Number(req.user.id) },
-  });
+  try {
+    const user = await prisma.user.findUnique({
+      where: { githubId: Number(req.user.id) },
+    });
 
-  res.send(user);
+    res.send(user);
+  } catch (err) {
+    res.send(err);
+  }
 });
 
-module.exports = router;
+export default router;

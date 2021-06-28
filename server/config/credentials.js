@@ -1,9 +1,7 @@
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 
 dotenv.config();
 
-module.exports = {
-  server_port: process.env.PORT,
-  github_client_id: process.env.GITHUB_ID,
-  github_client_secret: process.env.GITHUB_SECRET,
-};
+export const server_port = process.env.PORT;
+export const github_client_id = process.env.GITHUB_ID;
+export const github_client_secret = process.env.GITHUB_SECRET;
