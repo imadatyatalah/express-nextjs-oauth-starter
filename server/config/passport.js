@@ -2,6 +2,8 @@ const passport = require("passport");
 const GitHubStrategy = require("passport-github2").Strategy;
 const PrismaClient = require("@prisma/client").PrismaClient;
 
+const { github_client_id, github_client_secret } = require("./credentials");
+
 const prisma = new PrismaClient();
 
 passport.serializeUser((user, done) => {
@@ -20,8 +22,8 @@ passport.deserializeUser(async (id, done) => {
 passport.use(
   new GitHubStrategy(
     {
-      clientID: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientID: github_client_id,
+      clientSecret: github_client_secret,
       callbackURL: "/auth/github/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
