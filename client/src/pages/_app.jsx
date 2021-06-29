@@ -7,6 +7,7 @@ import { DefaultSeo } from "next-seo";
 import NProgress from "nprogress";
 
 import { useUser } from "@/stores/useUser";
+import Global from "@/layouts/global";
 import SEO from "next-seo.config";
 
 import "nprogress/nprogress.css";
@@ -34,7 +35,9 @@ const MyApp = ({ Component, pageProps }) => {
         forcedTheme={Component.theme || undefined}
       >
         <DefaultSeo {...SEO} />
-        <Component {...pageProps} />
+        <Global>
+          <Component {...pageProps} />
+        </Global>
       </ThemeProvider>
     </>
   );
