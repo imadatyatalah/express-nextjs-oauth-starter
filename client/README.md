@@ -1,34 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Next.js TailwindCSS Template</h1>
+
+<div align="center">
+
+<a href="https://next-js-tailwindcss-template.vercel.app/">View Demo</a>
+·
+<a href="https://github.com/imadatyatalah/next.js-tailwindcss-template/issues">Report Bug</a>
+·
+<a href="https://github.com/imadatyatalah/next.js-tailwindcss-template/issues">Request Feature</a>
+
+</div>
+
+<div align="center">
+
+[![CodeFactor](https://www.codefactor.io/repository/github/imadatyatalah/next.js-tailwindcss-template/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/imadatyatalah/next.js-tailwindcss-template)
+[![MIT License](https://img.shields.io/github/license/imadatyatalah/next.js-tailwindcss-template?color=blue&style=for-the-badge)](https://github.com/imadatyatalah/next.js-tailwindcss-template/blob/main/LICENSE)
+[![Stargazers](https://img.shields.io/github/stars/imadatyatalah/next.js-tailwindcss-template?style=for-the-badge)](https://github.com/imadatyatalah/next.js-tailwindcss-template/stargazers)
+[![Forks](https://img.shields.io/github/forks/imadatyatalah/next.js-tailwindcss-template?style=for-the-badge)](https://github.com/imadatyatalah/next.js-tailwindcss-template/network/members)
+
+</div>
+
+## About The Project
+
+After a couple of Next.js projects I found that I'm repeating myself and spending so much time just to setup a new project, That's where the idea of this template came, I wanted to help you and myself to not spend much time to setup a new project and focus on the project/idea itself.
+
+### Built With
+
+- [Next.js](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Next Themes](https://github.com/pacocoursey/next-themes)
+- [Next SEO](https://github.com/garmeeh/next-seo)
+
+### Features
+
+- Dark Mode ready.
+- Supports absolute imports.
+- SEO friendly.
+- Self-hosted Inter font & cashed by [Vercel](https://vercel.com/).
 
 ## Getting Started
 
-First, run the development server:
+Create a new application using `create-next-app` with the `-e | --example` flag pointing to this repository's _url_, like so:
 
 ```bash
-npm run dev
-# or
-yarn dev
+npx create-next-app@latest --example https://github.com/imadatyatalah/next.js-tailwindcss-template
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> **Tip:** You can find `create-next-app`'s documentation at [https://nextjs.org/docs/api-reference/create-next-app](https://nextjs.org/docs/api-reference/create-next-app).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can also click on the `Use this template` button.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+After that, clone the repository that was created on your account and follow the steps below:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+# Installing project dependencies
+npm install
+# Starting the project
+npm run dev
+```
 
-## Learn More
+Your site is now running at [`http://localhost:3000`](http://localhost:3000)!
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Distributed under the MIT License. See [`LICENSE`](https://github.com/imadatyatalah/next.js-tailwindcss-template/blob/main/LICENSE) for more information.
