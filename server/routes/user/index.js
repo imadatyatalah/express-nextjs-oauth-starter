@@ -1,19 +1,9 @@
 import express from "express";
 
-import { prisma } from "../../config/prisma.js";
+import { getUser } from "../../controllers/userController.js";
 
 const router = express.Router();
 
-router.get("/:username", async (req, res) => {
-  try {
-    const user = await prisma.user.findUnique({
-      where: { githubUsername: req.params.username },
-    });
-
-    res.send(user);
-  } catch (err) {
-    res.send(err);
-  }
-});
+router.get("/:username", getUser);
 
 export default router;
