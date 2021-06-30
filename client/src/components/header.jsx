@@ -26,6 +26,10 @@ const Header = () => {
                   className="rounded-full"
                 />
               </div>
+
+              <button>
+                <a href={"http://localhost:1337/auth/github/logout"}>logout</a>
+              </button>
             </>
           ) : (
             <>
