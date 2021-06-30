@@ -2,15 +2,14 @@ import express from "express";
 import jwt from "jsonwebtoken";
 
 import { prisma } from "../config/prisma.js";
-
-const JWT_KEY = "something_private_and_long_enough_to_secure";
+import { jwt_key } from "../config/credentials.js";
 
 const router = express();
 
 router.use((req, res, next) => {
   const token = req.headers["token"];
 
-  jwt.verify(token, JWT_KEY, function (err, data) {
+  jwt.verify(token, jwt_key, function (err, data) {
     if (err) {
       res.status(401).send({ error: true, message: "Unauthorized" });
     } else {

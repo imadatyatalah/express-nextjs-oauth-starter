@@ -2,7 +2,7 @@ import express from "express";
 import passport from "passport";
 import jwt from "jsonwebtoken";
 
-const JWT_KEY = "something_private_and_long_enough_to_secure";
+import { jwt_key } from "../../config/credentials.js";
 
 const router = express.Router();
 
@@ -12,7 +12,7 @@ router.get(
   "/callback",
   passport.authenticate("github", { failureRedirect: "/login" }),
   (req, res, next) => {
-    const token = jwt.sign({ id: req.user.id }, JWT_KEY, {
+    const token = jwt.sign({ id: req.user.id }, jwt_key, {
       expiresIn: 60 * 60 * 24 * 1000,
     });
 
