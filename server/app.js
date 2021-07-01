@@ -7,12 +7,17 @@ import cors from "cors";
 import routes from "./routes.js";
 import "./config/passport.js";
 
+const corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200,
+};
+
 const app = express();
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
