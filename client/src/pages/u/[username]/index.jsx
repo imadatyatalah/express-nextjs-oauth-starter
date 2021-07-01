@@ -17,10 +17,8 @@ const Username = ({ user }) => {
   );
 };
 
-export const getServerSideProps = async (ctx) => {
-  const { username } = ctx.params;
-
-  const user = await fetch(`http://localhost:1337/user/${username}`);
+export const getServerSideProps = async ({ params }) => {
+  const user = await fetch(`http://localhost:1337/user/${params.username}`);
 
   return { props: { user: await user.json() } };
 };
