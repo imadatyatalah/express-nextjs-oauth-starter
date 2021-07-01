@@ -4,6 +4,7 @@ import create from "zustand";
 export const useUser = create((set) => ({
   user: null,
   logged_in: false,
+  token: null,
   signIn: async () => {
     const { gh_token } = parseCookies();
 
@@ -13,9 +14,7 @@ export const useUser = create((set) => ({
     const user = await res.json();
 
     if (!user.error) {
-      set({ logged_in: true });
+      set({ user, logged_in: true, token: gh_token });
     }
-
-    set({ user });
   },
 }));
