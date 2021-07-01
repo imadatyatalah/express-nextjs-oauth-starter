@@ -1,30 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Username = ({ user }) => {
+const User = ({ user }) => {
   return (
     <>
-      <main>
-        <section>
-          <div>
-            <code>
-              <pre>{JSON.stringify(user, null, 2)}</pre>
-            </code>
-          </div>
-        </section>
-      </main>
+      <section>
+        <div>
+          <code>
+            <pre>{JSON.stringify(user, null, 2)}</pre>
+          </code>
+        </div>
+      </section>
     </>
   );
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const user = await fetch(`http://localhost:1337/user/${params.username}`);
+  const res = await fetch(`http://localhost:1337/user/${params.username}`);
+  const user = await res.json();
 
-  return { props: { user: await user.json() } };
+  return { props: { user } };
 };
 
-Username.propTypes = {
+User.propTypes = {
   user: PropTypes.object.isRequired,
 };
 
-export default Username;
+export default User;
