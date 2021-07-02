@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "prisma:studio": "yarn prisma studio",
     "prisma:migrate:dev": "yarn prisma migrate dev",
     "prisma:migrate:reset": "yarn prisma migrate reset",
@@ -25,6 +25,7 @@
     "passport-github2": "^0.1.12"
   },
   "devDependencies": {
+    "nodemon": "^2.0.9",
     "prisma": "^2.24.1"
   }
 }
