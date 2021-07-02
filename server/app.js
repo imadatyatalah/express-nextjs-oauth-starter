@@ -3,6 +3,7 @@ import express from "express";
 import logger from "morgan";
 import passport from "passport";
 import cors from "cors";
+import helmet from "helmet";
 
 import routes from "./routes.js";
 import "./config/passport.js";
@@ -18,6 +19,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
+app.use(helmet());
 
 app.use(passport.initialize());
 app.use(passport.session());
