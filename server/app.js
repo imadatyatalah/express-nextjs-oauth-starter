@@ -5,13 +5,9 @@ import passport from "passport";
 import cors from "cors";
 import helmet from "helmet";
 
+import { corsOptions } from "./config/cors.js";
 import routes from "./routes.js";
 import "./config/passport.js";
-
-const corsOptions = {
-  origin: "http://localhost:3000",
-  optionsSuccessStatus: 200,
-};
 
 const app = express();
 
