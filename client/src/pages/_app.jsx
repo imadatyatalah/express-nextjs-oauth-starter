@@ -26,7 +26,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     signIn();
-  }, [signIn]);
+  });
 
   return (
     <>
