@@ -19,6 +19,7 @@ router.get(
     res.cookie("gh_token", token, {
       secure: true,
       maxAge: 60 * 60 * 24 * 1000,
+      sameSite: "lax",
     });
 
     req.logIn(req.user, (err) => {
