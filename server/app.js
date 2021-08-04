@@ -4,6 +4,7 @@ import logger from "morgan";
 import passport from "passport";
 import cors from "cors";
 import helmet from "helmet";
+import cookieParser from "cookie-parser";
 
 import { corsOptions } from "./config/cors.js";
 import routes from "./routes.js";
@@ -14,6 +15,7 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(helmet());
 
