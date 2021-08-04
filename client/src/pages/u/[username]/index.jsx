@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import axios from "axios";
+
 const User = ({ user }) => {
   return (
     <>
@@ -16,8 +18,9 @@ const User = ({ user }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await fetch(`http://localhost:1337/user/${params.username}`);
-  const user = await res.json();
+  const { data: user } = await axios.get(
+    `http://localhost:1337/user/${params.username}`
+  );
 
   return { props: { user } };
 };
